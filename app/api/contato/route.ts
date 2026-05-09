@@ -1,8 +1,6 @@
 import { Resend } from "resend";
 import { z } from "zod";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const schema = z.object({
   nome: z.string().min(2),
   empresa: z.string().optional(),
@@ -75,6 +73,7 @@ export async function POST(request: Request) {
   `;
 
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const { error } = await resend.emails.send({
       from: "Site Exceed Soldas <noreply@exceedsoldas.com.br>",
       to: ["exceedsoldas@bol.com.br"],
