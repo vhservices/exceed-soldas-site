@@ -10,7 +10,7 @@ export const EMPRESA = {
     cidade: "Campinas",
     estado: "SP",
     completo: "Rua Dr. Edmundo Navarro de Andrade, 1788 - Parque Industrial, Campinas/SP",
-    cep: "13070-000",
+    cep: "13030-160",
   },
   contato: {
     telefoneFixo: "(19) 2514-0265",
