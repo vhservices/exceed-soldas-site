@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu, X, Phone } from "lucide-react";
 import { EMPRESA, WHATSAPP_LINK } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import Image from 'next/image'
 
 const NAV_ITEMS = [
   { label: "Início", href: "#inicio" },
@@ -36,7 +37,7 @@ export default function Header() {
       )}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between lg:h-20">
+        <div className="flex h-16 items-centr justify-between lg:h-20">
           {/* Logo */}
           <Link
             href="#inicio"
@@ -44,18 +45,17 @@ export default function Header() {
             onClick={fecharMenu}
           >
             <div className="flex flex-col leading-none">
-              <span
-                className="text-2xl font-bold tracking-widest text-white uppercase"
-                style={{ fontFamily: "var(--font-oswald)" }}
-              >
-                EXCEED
-              </span>
-              <span className="text-[10px] tracking-[0.3em] text-acento uppercase font-medium">
-                Soldas e Manutenção
-              </span>
+              <div className="relative w-48 h-16">
+                <Image
+                  src="/images/background.png"
+                  alt="Logo Exceed Soldas"
+                  fill
+                  className="rounded-x1"
+                  priority
+                />
+              </div>
             </div>
           </Link>
-
           {/* Nav desktop */}
           <nav className="hidden lg:flex items-center gap-8" aria-label="Menu principal">
             {NAV_ITEMS.map((item) => (
